@@ -23,8 +23,10 @@ const AllBrandProducts = ({ product, products, setProducts }) => {
           .then((data) => {
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
-              const remainingProducts = products.filter(product => product._id !== _id)
-              setProducts(remainingProducts)
+              const remainingProducts = products.filter(
+                (product) => product._id !== _id
+              );
+              setProducts(remainingProducts);
             }
           });
       }
@@ -70,13 +72,16 @@ const AllBrandProducts = ({ product, products, setProducts }) => {
         Rating: {rating}
       </p>
       <div className="p-6 pt-0 flex gap-2">
-        <button
-          className="select-none rounded-lg bg-sky-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-sky-500/20 transition-all hover:shadow-lg hover:shadow-sky-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-          type="button"
-          data-ripple-light="true"
-        >
-          Details
-        </button>
+        <Link to={`/products/${_id}`}>
+          {" "}
+          <button
+            className="select-none rounded-lg bg-sky-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-sky-500/20 transition-all hover:shadow-lg hover:shadow-sky-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            type="button"
+            data-ripple-light="true"
+          >
+            Details
+          </button>
+        </Link>
         <Link to={`/updateproducts/${_id}`}>
           <button
             className="select-none rounded-lg bg-sky-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-sky-500/20 transition-all hover:shadow-lg hover:shadow-sky-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"

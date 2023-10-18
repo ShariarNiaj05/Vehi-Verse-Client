@@ -7,6 +7,8 @@ import Login from "../Components/Login/Login";
 import BrandProducts from "../Pages/BrandProducts/BrandProducts";
 import UpdateProducts from "../Pages/UpdateProducts/UpdateProducts";
 import Register from "../Components/Register/Register";
+import ProductDetails from "../Pages/ProductDetails/ProductDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -17,42 +19,53 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-  
       },
       {
         path: "/products",
-        element: <AddProduct></AddProduct>,
+        element: (
+          <PrivateRoute>
+            <AddProduct></AddProduct>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/allproducts",
         element: <BrandProducts></BrandProducts>,
-        loader: ()=>fetch(`http://localhost:5000/products`)
-
-
+        loader: () => fetch(`http://localhost:5000/products`),
       },
       {
-        path: "updateproducts/:id",
-        element: <UpdateProducts></UpdateProducts>,
-        loader: ({params})=>fetch(`http://localhost:5000/products/${params.id}`)
-
-
+        path: "/updateproducts/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateProducts></UpdateProducts>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
       },
-     /*  {
-        path: "/:id",
-        element: <BrandProducts></BrandProducts>,
-
-      }, */
+      {
+        path: "/products/:id",
+        element: (
+          <PrivateRoute>
+            <ProductDetails></ProductDetails>
+          </PrivateRoute>
+        ),
+      },
       {
         path: "/mycart",
-        element: <MyCart></MyCart>,
+        element: (
+          <PrivateRoute>
+            <MyCart></MyCart>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: "/register",
-        element: <Register></Register>
+        element: <Register></Register>,
       },
     ],
   },
