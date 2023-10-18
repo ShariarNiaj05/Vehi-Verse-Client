@@ -12,6 +12,9 @@ const Navbar = () => {
     .catch()
   }
 
+
+  
+
    const linkStyle = ({ isActive, isPending }) =>
    isPending ? "pending" : isActive ? "bg-sky-600 text-white rounded p-2" : " hover:bg-sky-900 hover:text-white rounded p-2";
     
@@ -29,9 +32,20 @@ const Navbar = () => {
         <NavLink className={linkStyle} to={"/allproducts"}>All Product</NavLink>
         <NavLink className={linkStyle} to={"/mycart"}>My Cart</NavLink>
       </div>
-      <div>
+      <div className=" flex gap-3 justify-between items-center">
 
+        <div>
+        {
+          user && <span>
 
+            <img className=" h-10 w-10 rounded" src={user.photoURL} alt="" />
+            <p>{ user.displayName}</p>
+          </span>
+        }
+        </div>
+
+        <div>
+          
         {
           user ? <button onClick={handleLogOut}
           className="middle none center mr-3 rounded-lg border border-sky-500 py-3 px-6 font-sans text-xs font-bold uppercase text-sky-500 transition-all hover:opacity-75 focus:ring focus:ring-sky-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
@@ -45,6 +59,7 @@ const Navbar = () => {
           Login
         </button></NavLink>
         }
+</div>
         
   <button
     className="middle none center rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-black transition-all hover:bg-sky-500/10 active:bg-sky-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"

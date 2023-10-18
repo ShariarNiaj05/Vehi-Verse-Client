@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
+import SocialLogin from "../../Pages/SocialLogin/SocialLogin";
 
 const Login = () => {
 
@@ -123,7 +124,9 @@ const Login = () => {
             data-ripple-light="true"
           >
             Login
-          </button>
+                  </button>
+                  
+                  <SocialLogin></SocialLogin>
           <p className="flex justify-center mt-6 font-sans text-sm antialiased font-light leading-normal text-inherit">
             Don't have an account?
             <p className="block ml-1 font-sans text-sm antialiased font-bold leading-normal text-sky-500">

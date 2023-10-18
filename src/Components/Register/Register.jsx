@@ -4,6 +4,7 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import { updateProfile } from "firebase/auth";
 import auth from "../../Configurations/firebase.config";
 import Swal from "sweetalert2";
+import SocialLogin from "../../Pages/SocialLogin/SocialLogin";
 
 const Register = () => {
 
@@ -198,7 +199,9 @@ const Register = () => {
           data-ripple-light="true"
         >
           Register
-        </button>
+                  </button>
+                  
+                  <SocialLogin></SocialLogin>
                   
 
 
