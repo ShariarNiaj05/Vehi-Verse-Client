@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const AllBrandProducts = ({ product }) => {
+const AllBrandProducts = ({ product, products, setProducts }) => {
   const { image, name, brand, type, price, description, rating, _id } = product;
 
   const handleDelete = (_id) => {
@@ -23,6 +23,8 @@ const AllBrandProducts = ({ product }) => {
           .then((data) => {
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              const remainingProducts = products.filter(product => product._id !== _id)
+              setProducts(remainingProducts)
             }
           });
       }

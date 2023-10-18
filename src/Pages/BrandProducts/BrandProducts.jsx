@@ -3,7 +3,8 @@ import { useLoaderData } from "react-router-dom";
 import AllBrandProducts from "./AllBrandProducts";
 
 const BrandProducts = () => {
-  const products = useLoaderData();
+  const loadedProducts = useLoaderData();
+  const [products, setProducts] = useState(loadedProducts);
 
   // const brandProducts = useLoaderData()
   /*     const [categoryProducts, setCategoryProducts] = useState([])
@@ -30,7 +31,9 @@ const BrandProducts = () => {
         {products.map((product) => (
           <AllBrandProducts
             key={product._id}
-            product={product}
+                product={product}
+                products={products}
+                setProducts={setProducts}
           ></AllBrandProducts>
         ))}
       </div>
