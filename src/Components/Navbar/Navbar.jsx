@@ -15,6 +15,7 @@ const Navbar = () => {
       <div className=" text-lg font-semibold flex flex-wrap gap-2 ">
         <NavLink className={linkStyle} to={"/"}>Home</NavLink>
         <NavLink className={linkStyle} to={"/products"}>Add Product</NavLink>
+        <NavLink className={linkStyle} to={"/allproducts"}>All Product</NavLink>
         <NavLink className={linkStyle} to={"/mycart"}>My Cart</NavLink>
       </div>
       <div>
