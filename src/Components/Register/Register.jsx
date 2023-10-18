@@ -1,8 +1,12 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
+import { updateProfile } from "firebase/auth";
+import auth from "../../Configurations/firebase.config";
+import Swal from "sweetalert2";
 
 const Register = () => {
+
 
     const { createUser } = useContext(AuthContext)
     const location = useLocation()
@@ -19,16 +23,69 @@ const Register = () => {
         const newUser = {
             email, name, password, image
         }
-        console.log(newUser);
+        
+        if (password.length < 6) {
+            return Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Password muse be at least 6 characters or longer',
+                
+              })
+           
+          }
+          if (!/[A-Z]/.test(password)) {
+              return Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Password should have at least one capital letter',
+                
+              })
+           
+          }
+          if (!/^(?=.*[!@#$%^&*(),.?":{}|<>]).*$/.test(password)) {
+              return Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Password should have at least one special character',
+                
+              })
+            
+          }
+        
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
+
+                updateProfile(auth.currentUser, {
+                    displayName: name,
+                    photoURL: image
+                })
+                    .then(() => {
+                        console.log('profile Updated');
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'User Created Successfully',
+                            text: 'Happy Journey',
+                            
+                          })
+                    })
+                    .catch(error => {
+                        console.log(error);
+                       
+                })
+
+
                 
                 navigate(location?.state ? location.state : '/' )
 
         })
             .catch(error => {
-            console.log(error);
+                console.log(error);
+                Swal.fire({
+                    icon: 'error',
+                    title: `${error.message}`,
+                    text: 'Something went wrong!',
+                  })
         })
     }
   return (
@@ -44,6 +101,7 @@ const Register = () => {
           <input
                           name="email"
                           type="email"
+                          required
             className="w-full h-full px-3 py-3 font-sans text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-sky-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
             placeHolder=" "
           />
@@ -55,7 +113,7 @@ const Register = () => {
         <div className="relative h-11 w-full min-w-[200px]">
           <input
                           name="name"
-                          
+                          required
             className="w-full h-full px-3 py-3 font-sans text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-sky-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
             placeHolder=" "
           />
@@ -68,6 +126,7 @@ const Register = () => {
           <input
                           name="password"
                           type="password"
+                          required
             className="w-full h-full px-3 py-3 font-sans text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-sky-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
             placeHolder=" "
           />
@@ -78,7 +137,8 @@ const Register = () => {
 
         <div className="relative h-11 w-full min-w-[200px]">
           <input
-            name="image"
+                          name="image"
+                          required
             className="w-full h-full px-3 py-3 font-sans text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-sky-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
             placeHolder=" "
           />
