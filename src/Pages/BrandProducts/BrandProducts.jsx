@@ -26,14 +26,18 @@ const BrandProducts = () => {
   // console.log(brandProducts);
   return (
     <div>
-      All Brand available products: {products.length}
+      <div className="font-regular relative mb-4 block w-full rounded-lg bg-sky-500 p-4 text-base leading-5 text-white opacity-100">
+        <h2 className=" text-center font-bold">
+          Total {products.length} Products Available
+        </h2>
+      </div>
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {products.map((product) => (
           <AllBrandProducts
             key={product._id}
-                product={product}
-                products={products}
-                setProducts={setProducts}
+            product={product}
+            products={products}
+            setProducts={setProducts}
           ></AllBrandProducts>
         ))}
       </div>

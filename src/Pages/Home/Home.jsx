@@ -10,6 +10,7 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 import HomeLastSale from "./HomeLastSale";
 import Footer from "../../Components/Footer/Footer";
 import Banner from "./Banner";
+import HomeCard from "./HomeCard";
 
 const Home = ({params}) => {
 
@@ -77,16 +78,16 @@ const Home = ({params}) => {
         </div>  */}
         <Banner></Banner>
 
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className=" max-w-7xl mx-auto flex gap-5 flex-wrap justify-center items-center ">
         {
           
-            brands.map(brand => <div key={brand.id}>
+            brands.map(brand => <div className=" drop-shadow-xl" key={brand.id}>
             
 
               <Link to={`/brand/${brand.brandName}`}>
-              <div className=" flex flex-col justify-center items-center mb-4 h-72">
-            <img className=" w-1/2 h-full" src={brand.brandImage} alt=""/>
-            <p className=" font-bold text-2xl text-sky-600 shadow-gray-600">
+              <div className=" flex flex-col mx-auto justify-center items-center mb-4 h-72">
+            <img className=" w-36 h-36 rounded mx-auto " src={brand.brandImage} alt=""/>
+            <p className=" font-bold text-2xl text-sky-600 shadow-gray-600 uppercase">
             {brand.brandName}
             </p>
               </div>
@@ -99,6 +100,12 @@ const Home = ({params}) => {
       </div>
 
         <HomeLastSale></HomeLastSale>
+        <HomeCard></HomeCard>
+
+
+
+
+
         <Footer></Footer>
         
       </div>

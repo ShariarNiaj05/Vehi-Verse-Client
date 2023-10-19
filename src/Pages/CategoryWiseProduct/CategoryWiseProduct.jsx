@@ -31,7 +31,10 @@ const CategoryWiseProduct = ({ params }) => {
 
   return (
     <div>
-      Brand Available Products: {brandProducts.length}
+      <div className="font-regular relative mb-4 block w-full rounded-lg bg-sky-500 p-4 text-base leading-5 text-white opacity-100">
+      <h2 className=" text-center font-bold">Total {brandProducts.length} Products Available</h2>
+</div>
+      
       {brandProducts?.length > 0 ? (
         <div>
           <Swiper
