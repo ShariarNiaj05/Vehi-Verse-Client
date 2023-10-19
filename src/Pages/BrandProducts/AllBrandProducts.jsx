@@ -47,6 +47,9 @@ const AllBrandProducts = ({ product, products, setProducts }) => {
           layout="fill"
         />
       </div>
+
+
+      <div className=" px-5">
       <button
         className="middle none center rounded-lg border border-sky-500 py-3 px-6 font-sans text-xs font-bold uppercase text-sky-500 transition-all hover:opacity-75 focus:ring focus:ring-sky-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none mt-2"
         data-ripple-dark="true"
@@ -57,7 +60,7 @@ const AllBrandProducts = ({ product, products, setProducts }) => {
         className="middle none center rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-sky-500 transition-all hover:bg-sky-500/10 active:bg-sky-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         data-ripple-dark="true"
       >
-        {type}
+        Type: {type}
       </button>
       <div className="p-6">
         <h5 className="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
@@ -71,7 +74,7 @@ const AllBrandProducts = ({ product, products, setProducts }) => {
         className="middle none center rounded-lg border border-sky-500 py-3 px-6 font-sans text-xs font-bold uppercase text-sky-500 transition-all hover:opacity-75 focus:ring focus:ring-sky-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none mt-2"
         data-ripple-dark="true"
       >
-        {price}
+        Price: ${price}
       </button>
       <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
         Rating: {rating}
@@ -109,6 +112,7 @@ const AllBrandProducts = ({ product, products, setProducts }) => {
           Delete
         </button>
     }
+     </div>
         
       </div>
     </div>
