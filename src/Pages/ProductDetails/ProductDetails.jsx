@@ -1,16 +1,40 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
   const productDetails = useLoaderData();
 
   const { brand, description, image, name, price, rating, type, _id } =
     productDetails;
-
+console.log(productDetails);
   // const { id } = useParams()
   const handleAddToCart = (_id) => {
     console.log(_id);
 
-    fetch('')
+    const cartProduct = {
+      image: productDetails.image,
+      name: productDetails.name,
+      brand: productDetails.brand,
+      type: productDetails.type,
+      price: productDetails.price,
+      description: productDetails.description,
+      rating: productDetails.rating,
+    };
+
+
+    fetch(`http://localhost:5000/mycart`, {
+      method: "POST",
+      headers: {
+        'Content-type' : 'application/json'
+      },
+      body: JSON.stringify(cartProduct)
+    })
+    .then(res => res.json())
+      .then(data => {
+        if (data.insertedId) { 
+          Swal.fire("Success", "Product Added to Cart Successfully", "success");
+      }
+    })
 
   }
  
