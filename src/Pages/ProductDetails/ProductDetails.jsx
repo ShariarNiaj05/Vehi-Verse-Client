@@ -7,7 +7,11 @@ const ProductDetails = () => {
     productDetails;
 
   // const { id } = useParams()
-  console.log(productDetails);
+  const handleAddToCart = (_id) => {
+    console.log(_id);
+    
+  }
+ 
   return (
     <div className="mx-auto max-w-screen-md py-12">
       <div className="relative mb-12 flex flex-col overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
@@ -40,6 +44,7 @@ const ProductDetails = () => {
         </div>
         <div className="p-6 pt-0">
           <button
+            onClick={()=> handleAddToCart(_id)}
             className="select-none rounded-lg bg-sky-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-sky-500/20 transition-all hover:shadow-lg hover:shadow-sky-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="button"
             data-ripple-light="true"

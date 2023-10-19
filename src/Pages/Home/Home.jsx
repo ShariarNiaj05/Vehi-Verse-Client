@@ -6,9 +6,9 @@
 // import tesla from "/Tesla.jpg";
 // import toyota from "/toyota.png";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
-const Home = () => {
+const Home = ({params}) => {
 
   const [brands, setBrands] = useState([])
 
@@ -21,6 +21,7 @@ const Home = () => {
     })
   },[])
 
+  
 
 
   // const products = useLoaderData();

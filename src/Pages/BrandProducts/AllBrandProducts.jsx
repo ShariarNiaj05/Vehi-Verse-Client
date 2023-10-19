@@ -4,6 +4,9 @@ import Swal from "sweetalert2";
 const AllBrandProducts = ({ product, products, setProducts }) => {
   const { image, name, brand, type, price, description, rating, _id } = product;
 
+
+
+
   const handleDelete = (_id) => {
     console.log(_id);
     Swal.fire({
