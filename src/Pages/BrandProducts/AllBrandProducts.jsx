@@ -1,11 +1,13 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 const AllBrandProducts = ({ product, products, setProducts }) => {
   const { image, name, brand, type, price, description, rating, _id } = product;
 
 
-
+   const {user} = useContext(AuthContext)
 
   const handleDelete = (_id) => {
     console.log(_id);
@@ -85,6 +87,9 @@ const AllBrandProducts = ({ product, products, setProducts }) => {
             Details
           </button>
         </Link>
+
+      
+
         <Link to={`/updateproducts/${_id}`}>
           <button
             className="select-none rounded-lg bg-sky-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-sky-500/20 transition-all hover:shadow-lg hover:shadow-sky-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
@@ -94,13 +99,17 @@ const AllBrandProducts = ({ product, products, setProducts }) => {
             Update
           </button>
         </Link>
-        <button
+
+        {
+          user && <button
           onClick={() => handleDelete(_id)}
           className="middle none center rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-sky-500 transition-all hover:bg-sky-500/10 active:bg-sky-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           data-ripple-dark="true"
         >
           Delete
         </button>
+    }
+        
       </div>
     </div>
   );

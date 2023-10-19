@@ -6,7 +6,12 @@ export default {
      ],
 
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/banner1.jpg')",
+        
+      }
+    },
   },
   plugins: [],
 }

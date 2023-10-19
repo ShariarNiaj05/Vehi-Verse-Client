@@ -7,6 +7,9 @@
 // import toyota from "/toyota.png";
 import { useEffect, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import HomeLastSale from "./HomeLastSale";
+import Footer from "../../Components/Footer/Footer";
+import Banner from "./Banner";
 
 const Home = ({params}) => {
 
@@ -29,8 +32,7 @@ const Home = ({params}) => {
     // console.log(brands);
   return (
     <div>
-      Home
-      <br />
+   
       {/* Available Products: {products.length} */}
       <div>
 
@@ -73,6 +75,7 @@ const Home = ({params}) => {
             </p>
           </div>
         </div>  */}
+        <Banner></Banner>
 
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {
@@ -81,7 +84,7 @@ const Home = ({params}) => {
             
 
               <Link to={`/brand/${brand.brandName}`}>
-              <div className=" flex flex-col justify-center items-center mb-4">
+              <div className=" flex flex-col justify-center items-center mb-4 h-72">
             <img className=" w-1/2 h-full" src={brand.brandImage} alt=""/>
             <p className=" font-bold text-2xl text-sky-600 shadow-gray-600">
             {brand.brandName}
@@ -95,7 +98,8 @@ const Home = ({params}) => {
         }
       </div>
 
-
+        <HomeLastSale></HomeLastSale>
+        <Footer></Footer>
         
       </div>
     </div>

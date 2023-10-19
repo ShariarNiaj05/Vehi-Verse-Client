@@ -8,7 +8,7 @@ import HondaAdvertise from "./HondaAdvertise";
 
 const CategoryWiseProductCard = ({ brandProducts }) => {
   console.log(brandProducts.brand);
-  const { _id, description, image, name, price, rating, type } = brandProducts;
+  const { _id, description, image, name, price, rating, type, brand } = brandProducts;
 
   return (
     <div>
@@ -17,20 +17,29 @@ const CategoryWiseProductCard = ({ brandProducts }) => {
           <img src={image} alt="image" className="object-cover w-full h-full" />
         </div>
         <div className="p-6">
+          <div className=" flex justify-between">
           <h6 className="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-sky-500 uppercase">
-            {type}
+            Brand: {brand}
+            </h6>
+            <h6 className="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-sky-500 uppercase">
+            Type: {type}
           </h6>
+          </div>
+          <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-blue-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+            <div className="mt-px">Rating: { rating}</div>
+  </div>
           <h4 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
             {name}
           </h4>
           <p className="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
-            {description}
+            Description: {description}
           </p>
+          
           <button
             className="middle none center rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-sky-500 transition-all hover:bg-sky-500/10 active:bg-sky-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             data-ripple-dark="true"
           >
-            {price}
+            Price: ${price}
           </button>
 
           <Link to={`/updateproducts/${_id}`}>
