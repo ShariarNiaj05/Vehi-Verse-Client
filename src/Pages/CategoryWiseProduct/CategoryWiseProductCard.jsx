@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
+import ToyotaAdvertise from "./ToyotaAdvertise";
+import FordAdvertise from "./FordAdvertise";
+import BMWAdvertise from "./BMWAdvertise";
+import MercedesAdvertise from "./MercedesAdvertise";
+import TeslaAdvertise from "./TeslaAdvertise";
+import HondaAdvertise from "./HondaAdvertise";
 
 const CategoryWiseProductCard = ({ brandProducts }) => {
+  console.log(brandProducts.brand);
   const { _id, description, image, name, price, rating, type } = brandProducts;
+
   return (
     <div>
       <div className="relative flex max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
@@ -24,6 +32,17 @@ const CategoryWiseProductCard = ({ brandProducts }) => {
           >
             {price}
           </button>
+
+          <Link to={`/updateproducts/${_id}`}>
+            <button
+              className="select-none rounded-lg bg-sky-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-sky-500/20 transition-all hover:shadow-lg hover:shadow-sky-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+              data-ripple-light="true"
+            >
+              Update
+            </button>
+          </Link>
+
           <Link to={`/products/${_id}`} className="inline-block">
             <button
               className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-sky-500 uppercase align-middle transition-all rounded-lg select-none hover:bg-sky-500/10 active:bg-sky-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"

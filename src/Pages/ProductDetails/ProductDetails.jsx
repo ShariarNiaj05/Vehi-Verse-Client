@@ -9,7 +9,9 @@ const ProductDetails = () => {
   // const { id } = useParams()
   const handleAddToCart = (_id) => {
     console.log(_id);
-    
+
+    fetch('')
+
   }
  
   return (
