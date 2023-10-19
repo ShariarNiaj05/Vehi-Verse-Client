@@ -16,7 +16,7 @@ const Home = () => {
     fetch('http://localhost:5000/')
       .then(res => res.json())
       .then(data => {
-        // console.log(data);
+        console.log(data);
         setBrands(data)
     })
   },[])
@@ -79,7 +79,7 @@ const Home = () => {
             brands.map(brand => <div key={brand.id}>
             
 
-              <Link to={`/${brand.id}`}>
+              <Link to={`/brand/${brand.brandName}`}>
               <div className=" flex flex-col justify-center items-center mb-4">
             <img className=" w-1/2 h-full" src={brand.brandImage} alt=""/>
             <p className=" font-bold text-2xl text-sky-600 shadow-gray-600">

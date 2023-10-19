@@ -10,6 +10,7 @@ import Register from "../Components/Register/Register";
 import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
+import CategoryWiseProduct from "../Pages/CategoryWiseProduct/CategoryWiseProduct";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/brand/:brandName",
+        element: <CategoryWiseProduct></CategoryWiseProduct>,
+        loader: ({params}) => fetch(`http://localhost:5000/brand/${params.brandName}`)
       },
       {
         path: "/products",
