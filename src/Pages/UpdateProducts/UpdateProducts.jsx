@@ -28,13 +28,16 @@ const UpdateProducts = () => {
     };
     console.log(updatedProduct);
 
-    fetch(`https://vehi-verse-server-hfuhwuhew-shariar-islam.vercel.app/products/${_id}`, {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(updatedProduct),
-    })
+    fetch(
+      `https://vehi-verse-server-hfuhwuhew-shariar-islam.vercel.app/products/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(updatedProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -46,22 +49,24 @@ const UpdateProducts = () => {
 
   return (
     <div>
-      <div className="relative flex flex-col md:flex-row mx-auto rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
-      {  <h4 className="block text-center font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-          Update the information of {name}
-        </h4>}
-
+      {
+        <h4 className="block text-center font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+          Update the information of{" "}
+          <span className="px-2 rounded bg-sky-500 text-white">{name}</span>
+        </h4>
+      }
+      <div className="relative flex flex-col  md:flex-row mx-auto justify-center items-center rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
         <form
           onSubmit={handleUpdateProducts}
-          className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96"
+          className="mt-8 mb-2 w-80  sm:w-96"
         >
           <div className="mb-4 flex flex-col gap-6">
             {/* Image link filed*/}
             <div className="relative h-11 w-full min-w-[200px]">
               <input
                 type="text"
-                              name="image"
-                              defaultValue={image}
+                name="image"
+                defaultValue={image}
                 className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-sky-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                 placeholder=" "
               />
@@ -74,8 +79,8 @@ const UpdateProducts = () => {
             <div className="relative h-11 w-full min-w-[200px]">
               <input
                 type="text"
-                              name="name"
-                              defaultValue={name}
+                name="name"
+                defaultValue={name}
                 className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-sky-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                 placeholder=" "
               />
@@ -101,7 +106,7 @@ const UpdateProducts = () => {
               <select
                 name="brand"
                 defaultValue={brand}
-                className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-sky-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-sky-500 focus:border-2 focus:border-sky-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
               >
                 <option value="toyota">Toyota</option>
                 <option value="ford">Ford</option>
@@ -133,7 +138,7 @@ const UpdateProducts = () => {
               <select
                 name="type"
                 defaultValue={type}
-                className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-sky-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-sky-500 focus:border-2 focus:border-sky-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
               >
                 <option value="pickupTruck">Pickup Truck</option>
                 <option value="sports">Sports</option>
@@ -153,8 +158,8 @@ const UpdateProducts = () => {
             <div className="relative h-11 w-full min-w-[200px]">
               <input
                 type="text"
-                              name="price"
-                              defaultValue={price}
+                name="price"
+                defaultValue={price}
                 className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-sky-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                 placeholder=" "
               />
@@ -167,8 +172,8 @@ const UpdateProducts = () => {
             <div className="relative h-11 w-full min-w-[200px]">
               <input
                 type="text"
-                              name="description"
-                              defaultValue={description}
+                name="description"
+                defaultValue={description}
                 className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-sky-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                 placeholder=" "
               />
@@ -181,8 +186,8 @@ const UpdateProducts = () => {
             <div className="relative h-11 w-full min-w-[200px]">
               <input
                 type="text"
-                              name="rating"
-                              defaultValue={rating}
+                name="rating"
+                defaultValue={rating}
                 className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-sky-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                 placeholder=" "
               />
@@ -201,6 +206,28 @@ const UpdateProducts = () => {
             </button>
           </div>
         </form>
+        <div className="relative flex  justify-center w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+          {/* <img className="mt-8 mb-2 mx-auto" src= alt="" /> */}
+
+          <div className="relative mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40 ">
+            <img src={image} alt={name} />
+            <div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
+            <button
+              className="!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-sky-500 transition-all hover:bg-sky-500/10 active:bg-sky-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+              data-ripple-dark="true"
+            >
+              <span className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <button
+                  className="middle none center mr-4 rounded-lg bg-blue-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                  data-ripple-light="true"
+                >
+                  {type}
+                </button>
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -39,14 +39,16 @@ const AddProduct = () => {
       });
   };
   return (
-    <div className="relative flex flex-col md:flex-row mx-auto rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none mt-10 border">
-      <h4 className="block font-sans text-center text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+    <div>
+      <h4 className="block text-center font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
         Add New Product
       </h4>
+      <div className="relative flex flex-col md:flex-row mx-auto rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none mt-10">
+      
 
       <form
         onSubmit={handleAddProducts}
-        className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96"
+        className="mt-8 mb-2 w-80 max-w-screen-lg mx-auto sm:w-96"
       >
         <div className="mb-4 flex flex-col gap-6">
           {/* Image link filed*/}
@@ -189,6 +191,7 @@ const AddProduct = () => {
           </button>
         </div>
       </form>
+    </div>
     </div>
   );
 };
