@@ -11,6 +11,7 @@ import HomeLastSale from "./HomeLastSale";
 import Footer from "../../Components/Footer/Footer";
 import Banner from "./Banner";
 import HomeCard from "./HomeCard";
+import ExpertSays from "./ExpertSays";
 
 const Home = ({params}) => {
 
@@ -100,6 +101,7 @@ const Home = ({params}) => {
       </div>
 
         <HomeLastSale></HomeLastSale>
+        <ExpertSays></ExpertSays>
         <HomeCard></HomeCard>
 
 

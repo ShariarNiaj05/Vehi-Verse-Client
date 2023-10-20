@@ -13,7 +13,13 @@ const SocialLogin = () => {
         googleSignIn()
             .then(result => {
                 console.log(result);
-                navigate(location?.state ? location.state : '/' )
+              navigate(location?.state ? location.state : '/')
+              Swal.fire({
+                icon: 'success',
+                title: 'Login Successful',
+                
+                
+              })
             })
             .catch(error => {
                 Swal.fire({

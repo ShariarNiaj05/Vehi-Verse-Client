@@ -28,8 +28,8 @@ const Navbar = () => {
       </div>
       <div className=" text-lg font-semibold flex flex-wrap gap-2 ">
         <NavLink className={linkStyle} to={"/"}>Home</NavLink>
-        <NavLink className={linkStyle} to={"/products"}>Add Product</NavLink>
         <NavLink className={linkStyle} to={"/allproducts"}>All Product</NavLink>
+        <NavLink className={linkStyle} to={"/products"}>Add Product</NavLink>
         <NavLink className={linkStyle} to={"/mycart"}>My Cart</NavLink>
       </div>
       <div className=" flex gap-3 justify-between items-center">
