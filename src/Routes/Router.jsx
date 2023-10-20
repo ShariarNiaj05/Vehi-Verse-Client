@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/brand/:brandName",
         element: <CategoryWiseProduct></CategoryWiseProduct>,
-        loader: ({params}) => fetch(`http://localhost:5000/brand/${params.brandName}`)
+        loader: ({params}) => fetch(`https://vehi-verse-server-hfuhwuhew-shariar-islam.vercel.app/brand/${params.brandName}`)
       },
       {
         path: "/products",
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: "/allproducts",
         element: <BrandProducts></BrandProducts>,
-        loader: () => fetch(`http://localhost:5000/products`),
+        loader: () => fetch(`https://vehi-verse-server-hfuhwuhew-shariar-islam.vercel.app/products`),
       },
       {
         path: "/updateproducts/:id",
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(`https://vehi-verse-server-hfuhwuhew-shariar-islam.vercel.app/products/${params.id}`),
       },
       {
         path: "/products/:id",
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(`https://vehi-verse-server-hfuhwuhew-shariar-islam.vercel.app/products/${params.id}`),
       },
       {
         path: "/mycart",
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
             <MyCart></MyCart>
           </PrivateRoute>
         ),
-        loader: () => fetch(`http://localhost:5000/mycart`),
+        loader: () => fetch(`https://vehi-verse-server-hfuhwuhew-shariar-islam.vercel.app/mycart`),
       },
       {
         path: "/login",

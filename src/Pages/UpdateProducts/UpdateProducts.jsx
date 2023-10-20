@@ -28,7 +28,7 @@ const UpdateProducts = () => {
     };
     console.log(updatedProduct);
 
-    fetch(`http://localhost:5000/products/${_id}`, {
+    fetch(`https://vehi-verse-server-hfuhwuhew-shariar-islam.vercel.app/products/${_id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",

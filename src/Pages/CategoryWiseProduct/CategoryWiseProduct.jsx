@@ -22,7 +22,7 @@ const CategoryWiseProduct = ({ params }) => {
   const [brandProducts, setBrandProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/brand/${brandName}`)
+    fetch(`https://vehi-verse-server-hfuhwuhew-shariar-islam.vercel.app/brand/${brandName}`)
       .then((res) => res.json())
       .then((data) => {
         setBrandProducts(data);

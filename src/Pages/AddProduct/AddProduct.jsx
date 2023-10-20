@@ -23,7 +23,7 @@ const AddProduct = () => {
     };
     console.log(newProduct);
 
-    fetch("http://localhost:5000/products", {
+    fetch("https://vehi-verse-server-hfuhwuhew-shariar-islam.vercel.app/products", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

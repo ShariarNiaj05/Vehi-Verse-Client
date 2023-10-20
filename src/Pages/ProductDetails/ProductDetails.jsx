@@ -22,7 +22,7 @@ console.log(productDetails);
     };
 
 
-    fetch(`http://localhost:5000/mycart`, {
+    fetch(`https://vehi-verse-server-hfuhwuhew-shariar-islam.vercel.app/mycart`, {
       method: "POST",
       headers: {
         'Content-type' : 'application/json'

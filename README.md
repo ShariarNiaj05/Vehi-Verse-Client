@@ -1,8 +1,16 @@
-# React + Vite
+# Welcome to Vehiverse: The Ultimate Automotive Experience!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dive deep into the universe of vehicles and witness our commitment to automotive brilliance.
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🚗 [Explore Vehiverse Live Now!](https://vehiverse.web.app/)
+
+## Here are some project features and functionalities
+
+* A visitor can see brand wise car from the home page.
+* New visitor can register to our website and have login functionality.
+* A register user can add product, edit product and delete product.
+* A register user can see a product details, and can add the product in the cart.
+* If a user want he or she can delete a product from the cart page.
+* Add product page, my cart page, product details and update page is a private protected route. That means, to visit these routes ones have to be login first.
