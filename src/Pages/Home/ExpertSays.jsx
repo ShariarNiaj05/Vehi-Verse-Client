@@ -7,8 +7,8 @@ const ExpertSays = () => {
       <div>
           <h2 className=" text-center mb-6 block font-sans text-4xl font-medium leading-[1.5] tracking-normal  antialiased">What Our Experts Say  🎙️</h2>
           <div className=" max-w-screen-2xl flex flex-wrap mx-auto p-10 gap-16">
-      <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none shadow-2xl p-3 shadow-sky-200">
-        <div className="relative flex items-center gap-4 pt-0 pb-8 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
+      <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-2xl p-3 shadow-sky-200">
+        <div className="relative flex items-center gap-4 pt-0 pb-8 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent rounded-xl bg-clip-border">
           <img
             src={member1}
             alt="tania andrew"
@@ -34,8 +34,8 @@ const ExpertSays = () => {
               </div>
               
 
-              <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none shadow-2xl p-3 shadow-sky-50">
-        <div className="relative flex items-center gap-4 pt-0 pb-8 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
+              <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-2xl p-3 shadow-sky-50">
+        <div className="relative flex items-center gap-4 pt-0 pb-8 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent rounded-xl bg-clip-border">
           <img
             src={member2}
             alt="tania andrew"
@@ -62,8 +62,8 @@ const ExpertSays = () => {
               
 
 
-              <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none shadow-2xl p-3 shadow-sky-200">
-        <div className="relative flex items-center gap-4 pt-0 pb-8 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
+              <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-2xl p-3 shadow-sky-200">
+        <div className="relative flex items-center gap-4 pt-0 pb-8 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent rounded-xl bg-clip-border">
           <img
             src={member3}
             alt="tania andrew"
