@@ -14,3 +14,5 @@ Currently, two official plugins are available:
 * A register user can see a product details, and can add the product in the cart.
 * If a user want he or she can delete a product from the cart page.
 * Add product page, my cart page, product details and update page is a private protected route. That means, to visit these routes ones have to be login first.
+
+**Technologies**: firebase, react, react-router dom, mongodb, node js, express js
