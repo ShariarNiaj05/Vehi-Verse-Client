@@ -7,11 +7,10 @@ Dive deep into the universe of vehicles and witness our commitment to automotive
 **Technologies** : React, React Router, Firebase, MongoDB, Tailwind, Express js, Node js, Firebase, Sweetalert2, Swiper
 
 
-* A visitor can see brand wise car from the home page.
-* New visitor can register to our website and have login functionality.
-* A register user can add product, edit product and delete product.
-* A register user can see a product details, and can add the product in the cart.
-* If a user want he or she can delete a product from the cart page.
-* Add product page, my cart page, product details and update page is a private protected route. That means, to visit these routes ones have to be login first.
+* A visitor can see brand-wise cars from the home page.
+* New visitors can register to our website and have login functionality.
+* A registered user can add a product, edit a product, and delete a product.
+* A registered user can see product details and can add the product to the cart.
+* If a user wants he or she can delete a product from the cart page.
+* Add product page, my cart page, product details, and update page is a private protected route. That means, to visit these routes one has to be login first.
 
-**Technologies**: firebase, react, react-router dom, mongodb, node js, express js
