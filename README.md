@@ -2,11 +2,10 @@
 
 Dive deep into the universe of vehicles and witness our commitment to automotive brilliance.
 
-Currently, two official plugins are available:
-
 - 🚗 [Explore Vehiverse Live Now!](https://vehiverse.web.app/)
 
-## Here are some project features and functionalities
+** Technologies **: React, React Router, Firebase, MongoDB, Tailwind, Express js, Node js, Firebase, Sweetalert2, Swiper
+
 
 * A visitor can see brand wise car from the home page.
 * New visitor can register to our website and have login functionality.
