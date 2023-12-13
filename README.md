@@ -4,7 +4,7 @@ Dive deep into the universe of vehicles and witness our commitment to automotive
 
 - 🚗 [Explore Vehiverse Live Now!](https://vehiverse.web.app/)
 
-** Technologies **: React, React Router, Firebase, MongoDB, Tailwind, Express js, Node js, Firebase, Sweetalert2, Swiper
+**Technologies** : React, React Router, Firebase, MongoDB, Tailwind, Express js, Node js, Firebase, Sweetalert2, Swiper
 
 
 * A visitor can see brand wise car from the home page.
